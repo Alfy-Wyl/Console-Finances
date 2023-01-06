@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
@@ -86,3 +86,28 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+
+// Create Variables for the Available Data Set //
+let period = finances.length;
+let total = 0;
+
+
+// Create a For Loop and Sum Up Total Amounts Over the Entire Period //
+for(let a = 0; a < finances.length; a++) {
+    total += finances[a][1]
+}
+
+ 
+
+
+
+console.log(`
+Financial Analysis
+-------------------
+
+Total Months: ${period}
+
+Net Total Amount: $${total} 
+
+`)
