@@ -27,4 +27,6 @@ MIT License
 
 ## Screenshot
 
+<img width="1140" alt="Screenshot 2023-01-07 at 15 42 08" src="https://user-images.githubusercontent.com/118228946/211158906-f1669a37-3819-46bb-b51b-d308028e9d31.png">
+
 
