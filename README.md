@@ -14,7 +14,7 @@ N/A
 
 ## Usage
 
-When a user presents with a set of data for financial analysis, then Javascript concepts like 'For Loop' and 'If Statement' are employed to generate the desired results.
+When a user presents with a set of data for financial analysis, then Javascript concepts like 'For Loop' and 'If Statement' are employed to generate the desired results. To view the result,open the HTML file and inspect the console to view the results.
 
 
 ## License
