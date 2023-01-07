@@ -91,15 +91,47 @@ let finances = [
 // Create Variables for the Available Data Set //
 let period = finances.length;
 let total = 0;
+let change = 0;
+let average;
+let net = 0;
+let netArray = [];
+let avgChangeOfProfitAndLoss = 0;
+let greatestIncreaseInProfits = ['', 0]
+let greatestDecreaseInLosses = ['', 9999999999999]
 
-
-// Create a For Loop and Sum Up Total Amounts Over the Entire Period //
+// Create a For Loop and Sum Up Total Amounts Over the Entire Period
 for(let a = 0; a < finances.length; a++) {
-    total += finances[a][1]
+    total += finances[a][1] 
+    
+    //Obtain Net Array for Entire Period
+    change = finances[a][1] - net;
+    net = finances[a][1]
+     
+    netArray.push(change);
+
+    // Create An IF Statement To Generate Highest Profit With Corresponding Date
+    if(change > greatestIncreaseInProfits[1]) {
+        greatestIncreaseInProfits = [finances[a][0], finances[a][1]]
+    }
+    // Create An IF Statement To Generate Lowest Loss With Corresponding Date
+    if(change < greatestDecreaseInLosses[1]) {
+        greatestDecreaseInLosses = [finances[a][0], finances[a][1]]
+
+    }
 }
 
- 
+// Create a For Loop and Find the Average Change of Profits and Loss Over the Entire Period
+for(let a = 0; a < netArray.length; a++) {
+    avgChangeOfProfitAndLoss += netArray[a];
 
+}
+
+
+// Perform An Expression That Averages the Change of Profit and Loss and Approximate the Result
+average = Math.round((avgChangeOfProfitAndLoss / 86) * 100) / 100;
+
+
+ 
 
 
 console.log(`
@@ -109,5 +141,11 @@ Financial Analysis
 Total Months: ${period}
 
 Net Total Amount: $${total} 
+
+Average Change in Profits and Losses: $${average}
+
+The greatest increase in profits (date and amount): ${greatestIncreaseInProfits}
+
+The greatest decrease in losses (date and amount): ${greatestDecreaseInLosses}
 
 `)
